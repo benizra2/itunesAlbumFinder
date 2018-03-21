@@ -30,6 +30,7 @@ class Hello extends React.Component {
   	const { name } = this.props;
     return (
       <div id="container">
+      Test
       </div>
     );
   }
