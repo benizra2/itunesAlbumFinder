@@ -1,0 +1,57 @@
+html, body {
+  height: 100%;
+  text-align: center;
+}
+
+body {
+  height:100%;
+}
+
+#albums-container {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#logo {
+  height: 150px;
+  width: 150px;
+  margin-top: 0;
+}
+
+.form-group {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 45%;
+}
+
+.form-inline {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 45%;
+}
+
+.input-group {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 45%;
+}
+
+.form-control .has-feedback {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 45%;
+}
+
+input[placeholder] {
+  text-align: center;
+}
+
+.submitBtn {
+  background-color: #3d8b5f;
+}
