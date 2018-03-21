@@ -17,8 +17,8 @@ export default class Search extends React.Component {
               type="text"
               value={this.props.state.query}
               placeholder="Find Artist"
-              onInput={this.props.handleInputChange}
-              onClick={this.props.getAlbum} 
+              onChange={this.props.handleInputChange}
+              onKeyDown={this.props.handleEnter}
             />
             <FormControl.Feedback />
           </FormGroup>
