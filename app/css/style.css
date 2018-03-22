@@ -8,7 +8,6 @@ body {
 }
 
 #albums-container {
-  position: fixed;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -56,4 +55,31 @@ input[placeholder] {
 
 .submitBtn {
   background-color: #3d8b5f;
+}
+
+#gridContainer {
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.coverAlbum {
+  height:100px;
+  width:100px;
+  display: inline-block;
+  margin:10px 0 0 2%;
+  flex-grow: 1;
+  height:100px;
+  /* width: calc(100% * (1/4) - 10px - 1px); */
+  opacity: 0.3;
+  transition: opacity .8s;
+
+}
+
+
+.coverAlbum:hover {
+  opacity: 1.0;
+  width: 100%;
+  max-width: 100px;
+  height: auto;
 }

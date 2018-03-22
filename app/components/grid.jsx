@@ -9,7 +9,7 @@ export default class Grid extends React.Component {
       covers.push( <GridBox url={link} key={link + idx}/> )
     })
     return (
-      <div>
+      <div className="gridContainer">
         {covers}
       </div>
     )

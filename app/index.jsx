@@ -106,7 +106,9 @@ class Hello extends React.Component {
         <Info state={this.state}/>
         {/* <Gallery state={this.state}/> */}
         <div>        
-        <Grid state={this.state} />
+        <Grid 
+          state={this.state} 
+        />
         <h5>{this.state.artistViewUrl}</h5>
       </div>
       </div>
