@@ -6,6 +6,8 @@ import CoverFlow from 'coverflow-react';
 import Search from './components/search.jsx';
 import Info from './components/info.jsx';
 import Gallery from './components/gallery.jsx';
+import Grid from './components/grid.jsx';
+import GridBox from './components/gridBox.jsx';
 
 // 1. Create a github Repo or Click 'Fork' from the top menu and generate your own JSFiddle link. 
 // Be sure to click 'Update' when your work is done.
@@ -103,7 +105,10 @@ class Hello extends React.Component {
         <br></br>
         <Info state={this.state}/>
         {/* <Gallery state={this.state}/> */}
+        <div>        
+        <Grid state={this.state} />
         <h5>{this.state.artistViewUrl}</h5>
+      </div>
       </div>
     );
   }
