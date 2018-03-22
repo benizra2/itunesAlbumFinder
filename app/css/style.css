@@ -24,28 +24,30 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  /* width: 45%; */
 }
 
 .form-inline {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  /* width: 45%; */
 }
 
 .input-group {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  /* width: 45%; */
+}
+
+input#formBasicText.form-control{
+  width: 450px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .form-control .has-feedback {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  /* width: 45%; */
 }
 
 input[placeholder] {
