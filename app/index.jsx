@@ -50,6 +50,7 @@ class Hello extends React.Component {
     if (this.state.query && this.state.query.length > 1) {
       axios.get(`https://itunes.apple.com/search?term=${this.state.query}&entity=album`)
       .then(({ data }) => {
+        console.log(data.results)
         if (data.results.length) {
           this.setState({
             artistName: data.results[0].artistName,
@@ -77,7 +78,6 @@ class Hello extends React.Component {
       .then(({ data }) => {
         let albums = {};
         for (let i = 1; i < data.results.length; i++) {
-          console.log('this is the data.results[i]', data.results[i]);
           if (!albums[data.results[i].artworkUrl100] && data.results[i].collectionName.indexOf('- Single') === -1) {
             albums[data.results[i].artworkUrl100] = {};
             albums[data.results[i].artworkUrl100].pic = data.results[i].artworkUrl100  
@@ -108,13 +108,6 @@ class Hello extends React.Component {
         <Grid 
           state={this.state} 
         />
-        <br>
-        </br>
-        <br>
-        </br>
-        <br>
-        </br>
-        <h5>{this.state.artistViewUrl}</h5>
       </div>
     );
   }
