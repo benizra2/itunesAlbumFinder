@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import axios from 'axios';
 import myStyles from './css/style.css';
+import CoverFlow from 'coverflow-react';
+import Search from './components/search.jsx';
+import Info from './components/info.jsx';
+import Gallery from './components/gallery.jsx';
 
 // 1. Create a github Repo or Click 'Fork' from the top menu and generate your own JSFiddle link. 
 // Be sure to click 'Update' when your work is done.
@@ -26,18 +30,87 @@ class Hello extends React.Component {
       albumResults: '',
     };
   }
+
+  //validates that sufficient characters for a query were inputted to notify user
+  getValidationState() {
+    const length = this.state.query.length;
+    if (length > 3) return 'success';
+    else if (length > 2) return 'warning';
+    else if (length > 0) return 'error';
+    return null;
+  }
+
+  //makes get requests for every inputChange to API to collect info of artist who appeared at the top of the search query
+  handleInputChange(e) {
+    this.setState({
+      query: e.target.value
+    })
+    if (this.state.query && this.state.query.length > 1) {
+      axios.get(`https://itunes.apple.com/search?term=${this.state.query}&entity=album`)
+      .then(({ data }) => {
+        if (data.results.length) {
+          this.setState({
+            artistName: data.results[0].artistName,
+            artistId: data.results[0].artistId,
+            artistViewUrl: data.results[0].artistViewUrl
+          })
+        }
+      })
+    } 
+  }
+
+  handleEnter(e) {
+    if (e.which==13) {
+      this.getAlbum(e);
+    }
+  }
+
+  // 3. On Search, make an api call to iTunes API to fetch the information about the artist
+// API URL: https://itunes.apple.com/search?term=${ARTIST_NAME}.
+// Added "&entity=album" at end of URL to narrow down results to albums
+  getAlbum(e) {
+    e.preventDefault();
+    if (this.state.query && this.state.query.length > 1) {
+      axios.get(`https://itunes.apple.com/lookup?id=${this.state.artistId}&entity=album`)
+      .then(({ data }) => {
+        let albums = {};
+        for (let i = 1; i < data.results.length; i++) {
+          console.log('this is the data.results[i]', data.results[i]);
+          if (!albums[data.results[i].artworkUrl100] && data.results[i].collectionName.indexOf('- Single') === -1) {
+            albums[data.results[i].artworkUrl100] = {};
+            albums[data.results[i].artworkUrl100].pic = data.results[i].artworkUrl100  
+            albums[data.results[i].artworkUrl100].albumName = data.results[i].collectionName;
+            albums[data.results[i].artworkUrl100].albumLink = data.results[i].collectionViewUrl;
+          }
+        }
+        this.setState({albumResults: albums});
+      })
+    } 
+  }
+  
   render() {
   	const { name } = this.props;
     return (
       <div id="container">
-      Test
+        <img id="logo" src="http://3.bp.blogspot.com/-vHcJmghlzu0/UjqQzhShlpI/AAAAAAAAAg8/KhPa1fW-dBE/s1600/itunes-logo.png" />
+        <Search 
+          getValidationState={this.getValidationState.bind(this)}
+          state={this.state}
+          handleInputChange={this.handleInputChange.bind(this)}
+          getAlbum={this.getAlbum.bind(this)}
+          handleEnter={this.handleEnter.bind(this)}
+        />
+        <br></br>
+        <Info state={this.state}/>
+        {/* <Gallery state={this.state}/> */}
+        <h5>{this.state.artistViewUrl}</h5>
       </div>
     );
   }
 }
 
 render(
-  <Hello name="World"/>, 
+  <Hello/>, 
   document.getElementById('albums-container')
 );
 
