@@ -82,6 +82,7 @@ class Hello extends React.Component {
             albums[data.results[i].artworkUrl100] = {};
             albums[data.results[i].artworkUrl100].pic = data.results[i].artworkUrl100  
             albums[data.results[i].artworkUrl100].albumName = data.results[i].collectionName;
+            console.log("this is the link to itunes album", data.results[i].collectionViewUrl);
             albums[data.results[i].artworkUrl100].albumLink = data.results[i].collectionViewUrl;
           }
         }
@@ -104,13 +105,17 @@ class Hello extends React.Component {
         />
         <br></br>
         <Info state={this.state}/>
-        {/* <Gallery state={this.state}/> */}
-        <div>        
+        {/* <Gallery state={this.state}/> */}       
         <Grid 
           state={this.state} 
         />
+        <br>
+        </br>
+        <br>
+        </br>
+        <br>
+        </br>
         <h5>{this.state.artistViewUrl}</h5>
-      </div>
       </div>
     );
   }
