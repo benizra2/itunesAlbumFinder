@@ -82,7 +82,6 @@ class Hello extends React.Component {
             albums[data.results[i].artworkUrl100] = {};
             albums[data.results[i].artworkUrl100].pic = data.results[i].artworkUrl100  
             albums[data.results[i].artworkUrl100].albumName = data.results[i].collectionName;
-            console.log("this is the link to itunes album", data.results[i].collectionViewUrl);
             albums[data.results[i].artworkUrl100].albumLink = data.results[i].collectionViewUrl;
           }
         }

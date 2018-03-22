@@ -59,10 +59,11 @@ input[placeholder] {
   background-color: #3d8b5f;
 }
 
-#gridContainer {
+.gridContainer {
   display:flex;
   justify-content: center;
   flex-wrap: wrap;
+  width:875px;
 }
 
 .coverAlbum {
