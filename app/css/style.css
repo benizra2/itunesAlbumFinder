@@ -71,12 +71,9 @@ input[placeholder] {
   width:100px;
   display: inline-block;
   margin:10px 0 0 2%;
-  /* flex-grow: 1; */
   height:100px;
-  /* width: calc(100% * (1/4) - 10px - 1px); */
   opacity: 0.3;
   transition: opacity .8s;
-
 }
 
 
