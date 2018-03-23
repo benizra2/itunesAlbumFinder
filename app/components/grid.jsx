@@ -5,7 +5,7 @@ export default class Grid extends React.Component {
   render() {
     let covers = [];
     Object.keys(this.props.state.albumResults).forEach( (link, idx) => {
-      covers.push( <GridBox itunesUrl={this.props.state.albumResults[link].albumLink} imgUrl={link} key={link + idx}/> )
+      covers.push( <GridBox itunesUrl={this.props.state.albumResults[link].albumLink} imgUrl={link} idx={idx} key={link + idx}/> )
     })
     return (
       <div className="gridContainer">
