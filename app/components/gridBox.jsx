@@ -5,8 +5,13 @@ export default class GridBox extends React.Component {
     return(
       <div className="coverAlbum">
         {/* <a href={this.props.itunesUrl} target="_blank"><img src={this.props.imgUrl}/></a> */}
-        <img src={this.props.imgUrl} id={this.props.imgUrl}/>
-        <Modal imgUrl={this.props.imgUrl} idx={this.props.idx}/>
+        <img 
+          src={this.props.imgUrl} 
+          id={this.props.imgUrl} 
+          onClick={this.props.imgClick}
+          alt={this.props.albumName}
+        />
+        <Modal imgUrl={this.props.imgUrl}/>
       </div>
     )
   }

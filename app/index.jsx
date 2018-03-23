@@ -51,7 +51,6 @@ class Hello extends React.Component {
     if (this.state.query && this.state.query.length > 1) {
       axios.get(`https://itunes.apple.com/search?term=${this.state.query}&entity=album`)
       .then(({ data }) => {
-        console.log(data.results)
         if (data.results.length) {
           this.setState({
             artistName: data.results[0].artistName,
@@ -70,8 +69,8 @@ class Hello extends React.Component {
   }
 
   // 3. On Search, make an api call to iTunes API to fetch the information about the artist
-// API URL: https://itunes.apple.com/search?term=${ARTIST_NAME}.
-// Added "&entity=album" at end of URL to narrow down results to albums
+  // API URL: https://itunes.apple.com/search?term=${ARTIST_NAME}.
+  // Added "&entity=album" at end of URL to narrow down results to albums
   getAlbum(e) {
     e.preventDefault();
     if (this.state.query && this.state.query.length > 1) {
@@ -89,6 +88,19 @@ class Hello extends React.Component {
         this.setState({albumResults: albums});
       })
     } 
+  }
+
+  // Get the image and insert it inside the modal - use its "alt" text as a caption
+  imgClick(e) {
+    console.log("this is e.target", e.target);
+    console.log("this is e.target.alt", e.target.alt);
+
+    let img =  e.target.id;
+    let modalImg = e.target.id + "Img";
+    let captionText = e.target.id + "Caption";
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = e.target.alt;
   }
   
   render() {
@@ -108,6 +120,7 @@ class Hello extends React.Component {
         {/* <Gallery state={this.state}/> */}       
         <Grid 
           state={this.state} 
+          imgClick={this.imgClick.bind(this)}
         />
       </div>
     );
