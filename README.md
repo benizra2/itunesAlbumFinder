@@ -2,7 +2,7 @@
 
 ## **To Explore Project:**
 
-**Clone this repo by running the following on your terminal/command prompt:
+**Clone this repo by running the following on your terminal/command prompt:**
 
 $ git clone https://github.com/benizra2/itunesAlbumFinder.git
 
