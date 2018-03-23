@@ -3,10 +3,8 @@ import { render } from 'react-dom';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import myStyles from './css/style.css';
-import CoverFlow from 'coverflow-react';
 import Search from './components/search.jsx';
 import Info from './components/info.jsx';
-import Gallery from './components/gallery.jsx';
 import Grid from './components/grid.jsx';
 import GridBox from './components/gridBox.jsx';
 import Modal from './components/modal.jsx';
@@ -101,7 +99,6 @@ class Hello extends React.Component {
     if (e.currentTarget === e.target){
       let modal = e.target.parentNode;
       modal.style.display = "none";
-      console.log("this is span e", e)
     }
   }
 
@@ -119,7 +116,6 @@ class Hello extends React.Component {
         />
         <br></br>
         <Info state={this.state}/>
-        {/* <Gallery state={this.state}/> */}       
         <Grid 
           state={this.state} 
           imgClick={this.imgClick.bind(this)}
