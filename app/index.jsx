@@ -106,13 +106,10 @@ class Hello extends React.Component {
     let captionText = document.getElementById(e.target.id + "Caption");
     modal.style.display = "block";
     modalImg.src = e.target.src;
-    captionText.innerHTML = document.getElementById(e.target.alt);
+    captionText.innerHTML = e.target.alt;
   }
   
   spanClose(e) {
-    // console.log("e.target.parentNode",e.target.parentNode);
-
-    // console.log("e.target.parentNode.id",e.target.parentNode.id);
     let modal = e.target.parentNode;
     modal.style.display = "none";
   }
