@@ -9,6 +9,11 @@ import Grid from './components/grid.jsx';
 import GridBox from './components/gridBox.jsx';
 import Modal from './components/modal.jsx';
 
+/**********************************************************************************************************
+ * BUILD FILES are bigger than recommended allowance... 
+options for this would be to do the ff: minify or tree shaking or compression
+***********************************************************************************************************/
+
 // 1. Create a github Repo or Click 'Fork' from the top menu and generate your own JSFiddle link. 
 // Be sure to click 'Update' when your work is done.
 class Hello extends React.Component {
