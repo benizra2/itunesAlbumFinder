@@ -6,11 +6,11 @@
 
 $ git clone https://github.com/benizra2/itunesAlbumFinder.git
 
-**Make sure you have npm and Node.js installed, and run:
+**Make sure you have npm and Node.js installed, and run:**
 
 $ npm install
 
-**All the dependencies will be installed and you can then run it locally, i.e.:
+**All the dependencies will be installed and you can then run it locally, i.e.:**
 
 $ npm start
 
