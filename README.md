@@ -1,4 +1,4 @@
-# **Github API project with React**
+# **Itunes API project with React**
 
 ## **To Explore Project:**
 
