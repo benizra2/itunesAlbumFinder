@@ -92,14 +92,14 @@ class Hello extends React.Component {
 
   // Get the image and insert it inside the modal - use its "alt" text as a caption
   imgClick(e) {
-    console.log("this is e.target", e.target);
-    console.log("this is e.target.alt", e.target.alt);
+    // console.log("this is e.target", e.target);
+    // console.log("this is e.target.alt", e.target.alt);
 
     let img =  e.target.id;
     let modalImg = e.target.id + "Img";
     let captionText = e.target.id + "Caption";
     modal.style.display = "block";
-    modalImg.src = this.src;
+    modalImg.src = e.target.src;
     captionText.innerHTML = e.target.alt;
   }
   
