@@ -66,6 +66,8 @@ input[placeholder] {
   width:875px;
 }
 
+/*****CSS for Grid **********/
+
 .coverAlbum {
   height:100px;
   width:100px;
@@ -76,10 +78,40 @@ input[placeholder] {
   transition: opacity .8s;
 }
 
+/*****CSS for album in grid *****/
 
 .coverAlbum:hover {
-  opacity: 1.0;
+  opacity: 2.0;
   width: 100%;
   max-width: 100px;
   height: auto;
+  z-index: 9999; 
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5); 
+}
+
+@media only screen and (max-width: 700px) {
+  .coverAlbum {
+    width: 20%;
+  }
+  input#formBasicText.form-control {
+    max-width: 80%;
+  }
+  .gridContainer{
+    max-width: 700px;
+  }
+
+}
+
+@media only screen and (max-width: 500px) {
+  .coverAlbum {
+    width: 20%;
+  }
+  input#formBasicText.form-control {
+    max-width: 80%;
+  }
+  .gridContainer{
+    max-width: 500px;
+  }
 }
