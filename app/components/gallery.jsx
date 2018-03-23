@@ -1,6 +1,7 @@
 import React from 'react';
 import CoverFlow from 'coverflow-react';
 
+//***************** NOT USED ***************//
 //leveraged Coverflow npm package to produce an image carousel of Album Covers with their titles
 export default class Gallery extends React.Component {
   render() {

@@ -133,8 +133,8 @@ input[placeholder] {
 /* Modal Content (Image) */
 .modal-content {
   margin: auto;
-  display: block;
-  width: 100%;
+  display: inline-block;
+  width: 350px;
   max-width: 350px;
   max-height: 350px;
 }
@@ -142,13 +142,12 @@ input[placeholder] {
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
 .caption {
   margin: auto;
-  display: block;
+  display: inline-block;
   width: 80%;
   max-width: 700px;
   text-align: center;
   color: #ccc;
   padding: 10px 0;
-  height: 150px;
   font-size:35px;
 }
 
@@ -184,6 +183,6 @@ input[placeholder] {
 /* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px){
   .modal-content {
-      width: 100%;
+    width: 100%;
   }
 }
