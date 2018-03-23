@@ -8,6 +8,7 @@ import Info from './components/info.jsx';
 import Gallery from './components/gallery.jsx';
 import Grid from './components/grid.jsx';
 import GridBox from './components/gridBox.jsx';
+import Modal from './components/modal.jsx';
 
 // 1. Create a github Repo or Click 'Fork' from the top menu and generate your own JSFiddle link. 
 // Be sure to click 'Update' when your work is done.
