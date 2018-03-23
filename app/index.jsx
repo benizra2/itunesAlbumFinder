@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
+import ReactDOM from 'react-dom';
 import axios from 'axios';
 import myStyles from './css/style.css';
 import CoverFlow from 'coverflow-react';
@@ -92,20 +93,30 @@ class Hello extends React.Component {
 
   imgClick(e) {
     // console.log("this is e.target", e.target);
+    // console.log("this is this.refs", this.refs);
+    // console.log("this is e.target.id", e.target.id);
     // console.log("this is e.target.alt", e.target.alt);
 
     // Get the modal
-    let modal = e.target.id+ "Modal";
+    let modal = document.getElementById(e.target.id + "Modal");
+
 
     // Get the image and insert it inside the modal - use its "alt" text as a caption
-    let img =  e.target.id;
-    let modalImg = e.target.id + "Img";
-    let captionText = e.target.id + "Caption";
+    let modalImg = document.getElementById(e.target.id + "Img");
+    let captionText = document.getElementById(e.target.id + "Caption");
     modal.style.display = "block";
     modalImg.src = e.target.src;
-    captionText.innerHTML = e.target.alt;
+    captionText.innerHTML = document.getElementById(e.target.alt);
   }
   
+  spanClose(e) {
+    // console.log("e.target.parentNode",e.target.parentNode);
+
+    // console.log("e.target.parentNode.id",e.target.parentNode.id);
+    let modal = e.target.parentNode;
+    modal.style.display = "none";
+  }
+
   render() {
   	const { name } = this.props;
     return (
@@ -124,6 +135,7 @@ class Hello extends React.Component {
         <Grid 
           state={this.state} 
           imgClick={this.imgClick.bind(this)}
+          spanClose={this.spanClose.bind(this)}
         />
       </div>
     );

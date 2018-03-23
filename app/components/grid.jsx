@@ -11,6 +11,7 @@ export default class Grid extends React.Component {
                       key={link + idx}
                       imgClick={this.props.imgClick}
                       albumName={this.props.state.albumResults[link].albumName}
+                      spanClose={this.props.spanClose}
                     /> 
                   )
     })

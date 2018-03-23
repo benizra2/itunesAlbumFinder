@@ -11,7 +11,7 @@ export default class GridBox extends React.Component {
           onClick={this.props.imgClick}
           alt={this.props.albumName}
         />
-        <Modal imgUrl={this.props.imgUrl}/>
+        <Modal imgUrl={this.props.imgUrl} spanClose={this.props.spanClose}/>
       </div>
     )
   }
