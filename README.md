@@ -1,6 +1,6 @@
 # **Itunes API project with React**
 
-##Leverages iTunes API to extract album information of artists
+**Leverages iTunes API to extract album information of artists**
 
 
 ## **To Explore Project:**
